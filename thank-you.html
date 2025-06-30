@@ -1,95 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TKDPZ2QV');</script>
-<!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FurniCo - Thank You!</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Thank You - Furniture Store</title>
+    <!-- Tailwind CSS CDN for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Inter font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Global body font and background */
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: "Inter", sans-serif;
+            background-color: #f0f2f5;
+        }
+        /* Styling for content cards */
+        .card {
+            background-color: #ffffff;
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 1.5rem; /* p-6 */
+        }
+        /* Primary button styling */
+        .btn-primary {
+            @apply bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out;
+        }
+        /* Secondary button styling (used for navigation links) */
+        .btn-secondary {
+            @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out;
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKDPZ2QV"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+<body class="min-h-screen flex flex-col items-center py-8">
 
-    <!-- Header Section -->
-    <header class="bg-white shadow-sm py-4">
-        <nav class="container mx-auto px-4 flex justify-between items-center">
-            <!-- Logo -->
-            <a href="index.html" class="text-2xl font-bold text-indigo-700">FurniCo</a>
+    <!-- Navigation Bar - Common across all pages -->
+    <nav class="w-full bg-white shadow-lg p-4 rounded-xl max-w-5xl mb-8 flex flex-wrap justify-center space-x-4 md:space-x-8">
+        <a href="index.html" class="btn-secondary">Home</a>
+        <a href="products.html" class="btn-secondary">Products</a>
+        <a href="checkout.html" class="btn-secondary">Checkout</a>
+        <a href="thank-you.html" class="btn-secondary">Thank You</a>
+    </nav>
 
-            <!-- Navigation Links -->
-            <div class="hidden md:flex space-x-6">
-                <a href="index.html" class="text-gray-600 hover:text-indigo-700 font-medium">Home</a>
-                <a href="products.html" class="text-gray-600 hover:text-indigo-700 font-medium">Products</a>
-                <a href="#" class="text-gray-600 hover:text-indigo-700 font-medium">About Us</a>
-                <a href="#" class="text-gray-600 hover:text-indigo-700 font-medium">Contact</a>
-            </div>
-
-            <!-- Mobile Menu Button (for small screens) -->
-            <button class="md:hidden text-gray-600 hover:text-indigo-700 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-        </nav>
-    </header>
-
-    <!-- Thank You Section -->
-    <section class="container mx-auto px-4 py-16 text-center">
-        <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-lg p-8 md:p-12">
-            <svg class="w-24 h-24 mx-auto text-green-500 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Thank You for Your Order!</h1>
-            <p class="text-lg md:text-xl text-gray-700 mb-8">
-                Your purchase has been successful. We appreciate your business and hope you love your new furniture.
-            </p>
-            <div class="border-t border-b border-gray-200 py-4 mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 mb-4">Order Details</h2>
-                <p class="text-gray-700 text-base mb-2"><strong>Order ID:</strong> #FNC123456789</p>
-                <p class="text-gray-700 text-base mb-2"><strong>Date:</strong> June 30, 2025</p>
-                <p class="text-gray-700 text-base mb-2"><strong>Total Amount:</strong> $624.99</p>
-                <p class="text-gray-700 text-base">You will receive an email confirmation shortly.</p>
-            </div>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="products.html" class="inline-block bg-indigo-600 text-white px-8 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-indigo-700 transition duration-300 transform hover:scale-105">
-                    Continue Shopping
-                </a>
-                <a href="index.html" class="inline-block bg-gray-200 text-gray-800 px-8 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-gray-300 transition duration-300 transform hover:scale-105">
-                    Back to Home
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer class="bg-gray-900 text-white py-10 px-4 mt-16">
-        <div class="container mx-auto text-center md:flex md:justify-between md:items-center">
-            <div class="mb-4 md:mb-0">
-                <p>&copy; 2025 FurniCo. All rights reserved.</p>
-            </div>
-            <div class="flex justify-center space-x-6">
-                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a>
-                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a>
-            </div>
-        </div>
-    </footer>
-
+    <!-- Main Content Area for Thank You Page -->
+    <main class="w-full max-w-5xl px-4">
+        <section id="thank-you" class="card text-center">
+            <h1 class="text-4xl font-bold text-green-700 mb-6">Thank You for Your Order!</h1>
+            <p class="text-lg text-gray-700 mb-4">Your order #XYZ123 has been successfully placed.</p>
+            <p class="text-gray-600 mb-8">You will receive an order confirmation email shortly with details of your purchase.</p>
+            <!-- Button to return to the home page -->
+            <a href="index.html" class="btn-primary">Return to Home</a>
+        </section>
+    </main>
 </body>
 </html>
