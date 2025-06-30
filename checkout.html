@@ -1,172 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TKDPZ2QV');</script>
-<!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FurniCo - Checkout</title>
-    <!-- Tailwind CSS CDN -->
+    <title>Checkout - Furniture Store</title>
+    <!-- Tailwind CSS CDN for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Inter font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Global body font and background */
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: "Inter", sans-serif;
+            background-color: #f0f2f5;
+        }
+        /* Styling for content cards */
+        .card {
+            background-color: #ffffff;
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 1.5rem; /* p-6 */
+        }
+        /* Primary button styling */
+        .btn-primary {
+            @apply bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out;
+        }
+        /* Secondary button styling (used for navigation links) */
+        .btn-secondary {
+            @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out;
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKDPZ2QV"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+<body class="min-h-screen flex flex-col items-center py-8">
 
-    <!-- Header Section -->
-    <header class="bg-white shadow-sm py-4">
-        <nav class="container mx-auto px-4 flex justify-between items-center">
-            <!-- Logo -->
-            <a href="index.html" class="text-2xl font-bold text-indigo-700">FurniCo</a>
+    <!-- Navigation Bar - Common across all pages -->
+    <nav class="w-full bg-white shadow-lg p-4 rounded-xl max-w-5xl mb-8 flex flex-wrap justify-center space-x-4 md:space-x-8">
+        <a href="index.html" class="btn-secondary">Home</a>
+        <a href="products.html" class="btn-secondary">Products</a>
+        <a href="checkout.html" class="btn-secondary">Checkout</a>
+        <a href="thank-you.html" class="btn-secondary">Thank You</a>
+    </nav>
 
-            <!-- Navigation Links -->
-            <div class="hidden md:flex space-x-6">
-                <a href="index.html" class="text-gray-600 hover:text-indigo-700 font-medium">Home</a>
-                <a href="products.html" class="text-gray-600 hover:text-indigo-700 font-medium">Products</a>
-                <a href="products-detail.html" class="text-gray-600 hover:text-indigo-700 font-medium">Products</a>
-                <a href="#" class="text-gray-600 hover:text-indigo-700 font-medium">About Us</a>
-                <a href="#" class="text-gray-600 hover:text-indigo-700 font-medium">Contact</a>
+    <!-- Main Content Area for Checkout Page -->
+    <main class="w-full max-w-5xl px-4">
+        <section id="checkout" class="card">
+            <h1 class="text-3xl font-bold text-center text-indigo-800 mb-8">Checkout</h1>
+            <p class="text-lg text-gray-700 text-center mb-6">Review your order and proceed to payment.</p>
+
+            <div class="space-y-4 mb-8">
+                <!-- Dummy Order Summary -->
+                <div class="border border-gray-200 p-4 rounded-lg bg-gray-50">
+                    <h3 class="font-semibold text-lg text-gray-800">Your Order Summary:</h3>
+                    <ul class="list-disc list-inside text-gray-700">
+                        <li>Modern Sofa - $799.00</li>
+                        <li>Wooden Dining Table - $499.00</li>
+                        <li>Ergonomic Office Chair - $249.00</li>
+                    </ul>
+                    <p class="font-bold text-xl mt-4">Total: $1547.00</p>
+                </div>
+                
+                <!-- Dummy form for simulating 'begin_checkout' and 'purchase' events for GTM -->
+                <form id="checkout-form" class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Full Name:</label>
+                        <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="John Doe" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+                        <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="john.doe@example.com" required>
+                    </div>
+                    <div>
+                        <label for="address" class="block text-gray-700 text-sm font-bold mb-2">Shipping Address:</label>
+                        <textarea id="address" name="address" rows="3" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="123 Main St, City, Country" required></textarea>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <!-- Submit button that will redirect to the thank you page -->
+                        <button type="submit" class="btn-primary">Proceed to Payment</button>
+                    </div>
+                </form>
             </div>
-
-            <!-- Mobile Menu Button (for small screens) -->
-            <button class="md:hidden text-gray-600 hover:text-indigo-700 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-        </nav>
-    </header>
-
-    <!-- Checkout Section -->
-    <section class="container mx-auto px-4 py-16">
-        <h1 class="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900">Checkout</h1>
-
-        <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-8 md:p-12">
-            <h2 class="text-2xl font-bold text-gray-900 mb-8">Shipping Information</h2>
-            <form id="checkout-form">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                    <div>
-                        <label for="first-name" class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
-                        <input type="text" id="first-name" name="first-name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
-                    </div>
-                    <div>
-                        <label for="last-name" class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
-                        <input type="text" id="last-name" name="last-name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
-                    </div>
-                    <div class="md:col-span-2">
-                        <label for="address" class="block text-sm font-medium text-gray-700 mb-2">Address</label>
-                        <input type="text" id="address" name="address" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
-                    </div>
-                    <div>
-                        <label for="city" class="block text-sm font-medium text-gray-700 mb-2">City</label>
-                        <input type="text" id="city" name="city" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
-                    </div>
-                    <div>
-                        <label for="state" class="block text-sm font-medium text-gray-700 mb-2">State / Province</label>
-                        <input type="text" id="state" name="state" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
-                    </div>
-                    <div>
-                        <label for="zip" class="block text-sm font-medium text-gray-700 mb-2">ZIP / Postal Code</label>
-                        <input type="text" id="zip" name="zip" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
-                    </div>
-                    <div>
-                        <label for="country" class="block text-sm font-medium text-gray-700 mb-2">Country</label>
-                        <select id="country" name="country" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
-                            <option value="">Select a country</option>
-                            <option value="USA">United States</option>
-                            <option value="CAN">Canada</option>
-                            <option value="GBR">United Kingdom</option>
-                            <option value="AUS">Australia</option>
-                            <option value="IND">India</option>
-                            <!-- Add more countries as needed -->
-                        </select>
-                    </div>
-                </div>
-
-                <h2 class="text-2xl font-bold text-gray-900 mb-8">Payment Information</h2>
-                <div class="mb-8">
-                    <label for="card-number" class="block text-sm font-medium text-gray-700 mb-2">Card Number</label>
-                    <input type="text" id="card-number" name="card-number" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="XXXX XXXX XXXX XXXX" required>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
-                    <div>
-                        <label for="exp-date" class="block text-sm font-medium text-gray-700 mb-2">Expiration Date (MM/YY)</label>
-                        <input type="text" id="exp-date" name="exp-date" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="MM/YY" required>
-                    </div>
-                    <div class="sm:col-span-2">
-                        <label for="cvv" class="block text-sm font-medium text-gray-700 mb-2">CVV</label>
-                        <input type="text" id="cvv" name="cvv" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="XXX" required>
-                    </div>
-                </div>
-
-                <h2 class="text-2xl font-bold text-gray-900 mb-8">Order Summary</h2>
-                <div class="border-t border-b border-gray-200 py-4 mb-8">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="text-gray-700">Product 1 (x1)</span>
-                        <span class="font-semibold">$599.99</span>
-                    </div>
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="text-gray-700">Shipping</span>
-                        <span class="font-semibold">$25.00</span>
-                    </div>
-                    <div class="flex justify-between items-center text-xl font-bold text-gray-900 mt-4">
-                        <span>Total</span>
-                        <span>$624.99</span>
-                    </div>
-                </div>
-
-                <button type="submit" class="w-full bg-indigo-600 text-white px-8 py-4 rounded-full text-xl font-semibold shadow-lg hover:bg-indigo-700 transition duration-300 transform hover:scale-105">
-                    Place Order
-                </button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer class="bg-gray-900 text-white py-10 px-4 mt-16">
-        <div class="container mx-auto text-center md:flex md:justify-between md:items-center">
-            <div class="mb-4 md:mb-0">
-                <p>&copy; 2025 FurniCo. All rights reserved.</p>
-            </div>
-            <div class="flex justify-center space-x-6">
-                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a>
-                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a>
-            </div>
-        </div>
-    </footer>
+        </section>
+    </main>
 
     <script>
+        // Handle Checkout Form submission (simulated purchase)
         document.getElementById('checkout-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
+            event.preventDefault(); // Prevent actual form submission to keep user on local site
 
-            const form = event.target;
+            // In a real application, this would process payment/order details
+            // For the assignment, this is where you would typically trigger GTM events:
+            // For example: dataLayer.push({'event': 'purchase', 'ecommerce': {...}});
 
-            // Simple validation (can be more robust)
-            if (!form.checkValidity()) {
-                // If the form is invalid, the browser's built-in validation messages will show.
-                // We just prevent submission here.
-                return;
-            }
-
-            // In a real application, you would send this data to a server
-            // For this dummy, we'll simulate success and redirect.
-            console.log('Order submitted.');
-
-            // Redirect to the thank you page
+            // Simulate a successful purchase and redirect to the thank you page
             window.location.href = 'thank-you.html';
         });
     </script>
