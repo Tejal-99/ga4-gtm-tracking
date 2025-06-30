@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FurniCo - Product Detail</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header Section -->
+    <header class="bg-white shadow-sm py-4">
+        <nav class="container mx-auto px-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="text-2xl font-bold text-indigo-700">FurniCo</a>
+
+            <!-- Navigation Links -->
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-gray-600 hover:text-indigo-700 font-medium">Home</a>
+                <a href="products.html" class="text-gray-600 hover:text-indigo-700 font-medium">Products</a>
+                <a href="#" class="text-gray-600 hover:text-indigo-700 font-medium">About Us</a>
+                <a href="#" class="text-gray-600 hover:text-indigo-700 font-medium">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Button (for small screens) -->
+            <button class="md:hidden text-gray-600 hover:text-indigo-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Product Detail Section -->
+    <section class="container mx-auto px-4 py-16">
+        <div class="bg-white rounded-xl shadow-lg p-8 md:p-12 lg:flex lg:items-center lg:space-x-12">
+            <!-- Product Image -->
+            <div class="lg:w-1/2 mb-8 lg:mb-0">
+                <img id="product-image" src="https://placehold.co/800x600/D1E7DD/0F5132?text=Product+Image" alt="Product Image" class="w-full h-auto rounded-lg shadow-md">
+            </div>
+
+            <!-- Product Details -->
+            <div class="lg:w-1/2">
+                <h1 id="product-name" class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Modern Sofa</h1>
+                <p id="product-description" class="text-gray-700 text-lg mb-6 leading-relaxed">
+                    Experience ultimate comfort and style with our Modern Sofa. Crafted with premium fabric and a sturdy frame, this sofa features plush cushions, elegant tapered legs, and a timeless design that complements any contemporary living space. Perfect for lounging, entertaining, and making a statement.
+                </p>
+                <div class="flex items-center mb-6">
+                    <span class="text-gray-600 text-lg font-semibold mr-4">Color:</span>
+                    <div class="flex space-x-2">
+                        <span class="w-8 h-8 rounded-full bg-gray-700 border-2 border-indigo-500 cursor-pointer"></span>
+                        <span class="w-8 h-8 rounded-full bg-blue-700 border-2 border-transparent cursor-pointer hover:border-indigo-500"></span>
+                        <span class="w-8 h-8 rounded-full bg-green-700 border-2 border-transparent cursor-pointer hover:border-indigo-500"></span>
+                    </div>
+                </div>
+                <div class="flex items-center mb-8">
+                    <span class="text-gray-600 text-lg font-semibold mr-4">Quantity:</span>
+                    <input type="number" value="1" min="1" class="w-20 p-2 border border-gray-300 rounded-md text-center focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <div class="flex items-center justify-between mb-8">
+                    <span id="product-price" class="text-4xl font-extrabold text-indigo-700">$599.99</span>
+                    <button class="bg-indigo-600 text-white px-8 py-4 rounded-full text-xl font-semibold shadow-lg hover:bg-indigo-700 transition duration-300 transform hover:scale-105">
+                        Add to Cart
+                    </button>
+                </div>
+
+                <div class="border-t border-gray-200 pt-8 mt-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Specifications</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Dimensions: 80"W x 36"D x 30"H</li>
+                        <li>Material: High-quality linen fabric, solid wood frame</li>
+                        <li>Seating Capacity: 3-seater</li>
+                        <li>Assembly: Minimal assembly required</li>
+                        <li>Care Instructions: Spot clean with damp cloth</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products Section -->
+    <section class="container mx-auto px-4 py-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">You Might Also Like</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Related Product Card 1 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
+                <a href="product-detail.html?id=4">
+                    <img src="https://placehold.co/600x400/D4EDDA/155724?text=Office+Desk" alt="Office Desk" class="w-full h-48 object-cover">
+                </a>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Ergonomic Office Desk</h3>
+                    <p class="text-gray-600 text-sm mb-4">Boost productivity with a spacious and ergonomic desk.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-indigo-700">$349.99</span>
+                        <button class="bg-indigo-600 text-white px-4 py-2 rounded-full hover:bg-indigo-700 transition duration-300">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Product Card 2 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
+                <a href="product-detail.html?id=5">
+                    <img src="https://placehold.co/600x400/F0F8FF/004085?text=Bookshelf" alt="Bookshelf" class="w-full h-48 object-cover">
+                </a>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Stylish Bookshelf</h3>
+                    <p class="text-gray-600 text-sm mb-4">Organize your books and decor with this modern shelf.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-indigo-700">$189.99</span>
+                        <button class="bg-indigo-600 text-white px-4 py-2 rounded-full hover:bg-indigo-700 transition duration-300">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Product Card 3 -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105">
+                <a href="product-detail.html?id=6">
+                    <img src="https://placehold.co/600x400/FFF3CD/664D03?text=Armchair" alt="Armchair" class="w-full h-48 object-cover">
+                </a>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Cozy Armchair</h3>
+                    <p class="text-gray-600 text-sm mb-4">Sink into comfort with this plush and inviting armchair.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-indigo-700">$249.99</span>
+                        <button class="bg-indigo-600 text-white px-4 py-2 rounded-full hover:bg-indigo-700 transition duration-300">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-white py-10 px-4">
+        <div class="container mx-auto text-center md:flex md:justify-between md:items-center">
+            <div class="mb-4 md:mb-0">
+                <p>&copy; 2025 FurniCo. All rights reserved.</p>
+            </div>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dummy data for products
+        const products = {
+            1: {
+                name: "Modern Sofa",
+                description: "Experience ultimate comfort and style with our Modern Sofa. Crafted with premium fabric and a sturdy frame, this sofa features plush cushions, elegant tapered legs, and a timeless design that complements any contemporary living space. Perfect for lounging, entertaining, and making a statement.",
+                price: "599.99",
+                image: "https://placehold.co/800x600/D1E7DD/0F5132?text=Modern+Sofa",
+                specs: [
+                    "Dimensions: 80\"W x 36\"D x 30\"H",
+                    "Material: High-quality linen fabric, solid wood frame",
+                    "Seating Capacity: 3-seater",
+                    "Assembly: Minimal assembly required",
+                    "Care Instructions: Spot clean with damp cloth"
+                ]
+            },
+            2: {
+                name: "Elegant Dining Set",
+                description: "Crafted for memorable meals and gatherings, this elegant dining set combines a robust table with comfortable chairs, making it the perfect centerpiece for your dining room. Its timeless design ensures it fits perfectly in both modern and classic interiors.",
+                price: "899.99",
+                image: "https://placehold.co/800x600/F8D7DA/842029?text=Dining+Table+Set",
+                specs: [
+                    "Table Dimensions: 60\"L x 36\"W x 30\"H",
+                    "Chair Material: Solid wood, upholstered seats",
+                    "Seating Capacity: 6 persons",
+                    "Assembly: Moderate assembly required",
+                    "Care Instructions: Wipe clean with dry cloth"
+                ]
+            },
+            3: {
+                name: "Luxury Bedroom Set",
+                description: "Indulge in comfort with our premium bedroom collection. This set includes a king-sized bed, two nightstands, and a dresser, all designed with elegant finishes and ample storage. Transform your bedroom into a serene and stylish retreat.",
+                price: "1299.99",
+                image: "https://placehold.co/800x600/CCE5FF/004085?text=Bedroom+Set",
+                specs: [
+                    "Bed Size: King",
+                    "Material: Solid wood, high-density foam padding",
+                    "Storage: 6-drawer dresser, 2 nightstands",
+                    "Assembly: Professional assembly recommended",
+                    "Care Instructions: Dust with soft cloth"
+                ]
+            },
+            4: {
+                name: "Ergonomic Office Desk",
+                description: "Boost productivity with a spacious and ergonomic desk. Designed for comfort during long working hours, it features a large surface area for your monitor and accessories, along with built-in cable management. Ideal for home offices or professional workspaces.",
+                price: "349.99",
+                image: "https://placehold.co/800x600/D4EDDA/155724?text=Office+Desk",
+                specs: [
+                    "Dimensions: 48\"W x 24\"D x 30\"H",
+                    "Material: MDF, steel frame",
+                    "Features: Cable management grommets",
+                    "Assembly: Easy assembly with tools included",
+                    "Care Instructions: Wipe clean with damp cloth"
+                ]
+            },
+            5: {
+                name: "Stylish Bookshelf",
+                description: "Organize your books and decor with this modern shelf. Its open design provides easy access and a contemporary look, while multiple tiers offer ample space for your collection. A perfect addition to any living room, study, or bedroom.",
+                price: "189.99",
+                image: "https://placehold.co/800x600/F0F8FF/004085?text=Bookshelf",
+                specs: [
+                    "Dimensions: 30\"W x 12\"D x 70\"H",
+                    "Material: Particle board, metal frame",
+                    "Shelves: 5 open shelves",
+                    "Assembly: Required",
+                    "Care Instructions: Wipe with dry cloth"
+                ]
+            },
+            6: {
+                name: "Cozy Armchair",
+                description: "Sink into comfort with this plush and inviting armchair. Upholstered in soft fabric with a supportive backrest, it's the perfect spot for reading a book or enjoying a cup of coffee. Its compact size makes it suitable for smaller spaces.",
+                price: "249.99",
+                image: "https://placehold.co/800x600/FFF3CD/664D03?text=Armchair",
+                specs: [
+                    "Dimensions: 30\"W x 32\"D x 34\"H",
+                    "Material: Polyester fabric, solid wood legs",
+                    "Assembly: Minor leg assembly",
+                    "Care Instructions: Spot clean only"
+                ]
+            }
+        };
+
+        // Function to load product details based on ID from URL
+        function loadProductDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+
+            if (productId && products[productId]) {
+                const product = products[productId];
+                document.getElementById('product-image').src = product.image;
+                document.getElementById('product-name').textContent = product.name;
+                document.getElementById('product-description').textContent = product.description;
+                document.getElementById('product-price').textContent = `$${product.price}`;
+
+                const specsList = document.querySelector('#product-detail-page-html ul'); // Select the ul inside immersive
+                if (specsList) {
+                    specsList.innerHTML = ''; // Clear existing specs
+                    product.specs.forEach(spec => {
+                        const li = document.createElement('li');
+                        li.textContent = spec;
+                        specsList.appendChild(li);
+                    });
+                }
+            } else {
+                // Fallback for when no ID is provided or ID is invalid
+                console.warn("Product ID not found or invalid. Displaying default product.");
+                // You could redirect to products.html or show an error message
+            }
+        }
+
+        // Call the function when the page loads
+        document.addEventListener('DOMContentLoaded', loadProductDetails);
+    </script>
+</body>
+</html>
